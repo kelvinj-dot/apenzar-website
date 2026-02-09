@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Ledger | Apenzar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0A1628; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #111; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .card { border-top: 1px solid #E5E7EB; padding: 4rem 0; display: grid; md:grid-template-columns: 1fr 2fr 1fr; gap: 2rem; align-items: start; transition: 0.2s; }
+        .card:hover { background: #FAFAFA; padding-left: 1rem; padding-right: 1rem; }
+        .bounty-tag { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 700; }
+        .value-box { background: #F3F4F6; padding: 1rem; font-size: 0.8rem; margin-top: 1rem; border-left: 2px solid var(--navy); }
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; transition: 0.3s; }
+        .nav-link:hover { color: #0A1628; }
+        .btn-next { border-bottom: 2px solid var(--navy); padding-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; transition: 0.2s; }
+        .btn-next:hover { border-color: #D4AF37; color: #D4AF37; }
+    </style>
+</head>
+<body class="py-12 px-6 md:px-12 flex flex-col min-h-screen">
+
+    <nav class="max-w-7xl mx-auto w-full flex justify-between items-start mb-20">
+        <div>
+            <a href="index.html" class="font-black text-xl tracking-tighter text-[#0A1628] block leading-none mb-1">APENZAR</a>
+            <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Beverly Hills, CA</div>
+        </div>
+        <div class="hidden md:flex gap-8">
+            <a href="market.html" class="nav-link">01 Market</a>
+            <span class="nav-link text-black">02 Ledger</span>
+            <a href="mechanism.html" class="nav-link">03 Mechanism</a>
+            <a href="issuance.html" class="nav-link">04 Access</a>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto mb-24">
+        <h1 class="serif text-5xl md:text-6xl text-[#0A1628] mb-6">Active Open Orders</h1>
+        <p class="text-xl text-gray-500 font-light max-w-3xl">
+            8 Active Mandates. Each protocol solves a critical problem for the SME while generating significant yield for the Invitation Holder.
+        </p>
+    </header>
+
+    <div class="max-w-7xl mx-auto border-b border-gray-100 pb-12 flex-grow">
+        
+        <div class="card border-t-4 border-t-[#0A1628]">
+            <div>
+                <div class="text-4xl serif text-[#D4AF37] mb-2">01</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">The Syndicate</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Universal Procurement</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> We aggregate Independent SMEs into a <strong>$100 Million Purchasing Block</strong> to unlock Factory-Gate Pricing on universal supplies.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="value-box"><strong>For the SME:</strong> ~20% Cost Reduction.</div>
+                    <div class="value-box border-[#D4AF37]"><strong>For You:</strong> The Universal Key. Every business qualifies.</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Bounty</div>
+                <div class="bounty-tag">$50,000</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per SME</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">02</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">Ironclad</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Construction</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> We assign <strong>Standby Retainers</strong> and Paid Estimates to General Contractors for our Logistics REIT partners.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="value-box"><strong>For the SME:</strong> Paid to wait. Revenue for readiness.</div>
+                    <div class="value-box border-[#D4AF37]"><strong>For You:</strong> High velocity placement.</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$5,000</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Firm</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">03</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">Meridian</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Retail</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> We pay Slotting Fees (Rent) for wall space in high-traffic shops to host brand samples.
+                </p>
+                <div class="value-box"><strong>For the SME:</strong> Passive rental income from empty walls.</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$1,500</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Store</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">04</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">Harvest</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Agri-Business</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> We act as a Forward Buyer, purchasing future yield pre-season.
+                </p>
+                <div class="value-box"><strong>For the SME:</strong> Guaranteed revenue and capital to plant.</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$25,000</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Co-op</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">05</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">The Grid</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Infrastructure</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> We lease surface rights on industrial roofs (>50k sq ft) for Microgrid Solar.
+                </p>
+                <div class="value-box"><strong>For the SME:</strong> Monetization of a non-performing asset (Roof).</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$20,000</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Site</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">06</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">Vector</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Fashion</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> Kinetic Cloud Inventory. We enable dynamic intra-regional transfer of stock between boutiques.
+                </p>
+                <div class="value-box"><strong>For the SME:</strong> Instant liquidity on stagnant inventory.</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$2,500</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Store</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="text-4xl serif text-[#0A1628] mb-2">07</div>
+                <h3 class="font-bold text-[#0A1628] uppercase tracking-wide">Atelier</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Real Estate</div>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> Amenity Capitalization. We furnish luxury villas with inventory to generate <strong>Ancillary Revenue</strong>.
+                </p>
+                <div class="value-box"><strong>For the SME:</strong> Zero CapEx + New revenue stream.</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag">$2,500</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Per Home</div>
+            </div>
+        </div>
+
+        <div class="card bg-[#0A1628] text-white p-8 rounded-sm">
+            <div>
+                <div class="text-4xl serif text-[#D4AF37] mb-2">08</div>
+                <h3 class="font-bold text-white uppercase tracking-wide">Sonar</h3>
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Strategic</div>
+            </div>
+            <div>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    <strong>The Mandate:</strong> Strategic Sourcing Auctions for rare commodities and assets.
+                </p>
+                <div class="text-xs text-[#D4AF37]">Target: Global Commodity Suppliers</div>
+            </div>
+            <div class="text-right">
+                <div class="bounty-tag text-[#D4AF37]">$1M+</div>
+                <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Auction</div>
+            </div>
+        </div>
+
+        <div class="text-center mt-20 mb-12">
+            <a href="mechanism.html" class="btn-next">Understand The Mechanism &rarr;</a>
+        </div>
+
+    </div>
+
+    <footer class="max-w-7xl mx-auto w-full mt-16 pt-8 border-t border-gray-200 text-center md:text-left">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            Apenzar Global OS Holdings Inc. • Beverly Hills, CA
+        </div>
+    </footer>
+
+</body>
+</html>

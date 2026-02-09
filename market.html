@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Private Market | Apenzar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0A1628; }
+        body { font-family: 'Inter', sans-serif; background: #F9FAFB; color: #111; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .btn-next { border-bottom: 2px solid var(--navy); padding-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; transition: 0.2s; }
+        .btn-next:hover { border-color: #D4AF37; color: #D4AF37; }
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; transition: 0.3s; }
+        .nav-link:hover { color: #0A1628; }
+    </style>
+</head>
+<body class="py-12 px-6 md:px-12 flex flex-col min-h-screen">
+
+    <nav class="max-w-5xl mx-auto w-full flex justify-between items-start mb-24">
+        <div>
+            <a href="index.html" class="font-black text-xl tracking-tighter text-[#0A1628] block leading-none mb-1">APENZAR</a>
+            <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Beverly Hills, CA</div>
+        </div>
+        <div class="hidden md:flex gap-6">
+            <span class="nav-link text-black">01 Market</span>
+            <a href="ledger.html" class="nav-link">02 Ledger</a>
+            <a href="mechanism.html" class="nav-link">03 Mechanism</a>
+            <a href="issuance.html" class="nav-link">04 Access</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto flex-grow">
+        <span class="text-[10px] font-bold text-[#0A1628] uppercase tracking-[0.2em] mb-6 block">The Structure</span>
+        <h1 class="serif text-4xl md:text-6xl text-[#0A1628] mb-10 leading-tight">
+            The Apenzar Private Market is a restricted commercial administration venue.
+        </h1>
+        
+        <div class="space-y-12 text-lg text-gray-600 font-light leading-relaxed mb-20">
+            <p>
+                We operate as a <strong>Private Market Administrator</strong>. We do not buy assets directly. Instead, we administer the architecture that allows our Private Clients and Institutional Partners (Principals) to acquire them securely.
+            </p>
+            
+            <div class="border-t border-gray-200 my-8"></div>
+
+            <p>
+                Our Principals have issued <strong>Open Orders</strong> for specific commercial assets—ranging from procurement contracts to infrastructure rights.
+            </p>
+            <div class="border-l-4 border-[#0A1628] pl-8 py-4 my-8 bg-white shadow-sm p-6">
+                <p class="text-xl md:text-2xl text-[#0A1628] font-medium serif italic">
+                    "Our Clients provide the Capital.<br>
+                    You provide the Invitation."
+                </p>
+            </div>
+            <p>
+                This market is <strong>By Invitation Only</strong>. Businesses cannot apply to enter; they must be invited by a holder of a valid Invitation Option.
+            </p>
+            
+            <div class="text-right pt-8">
+                <a href="ledger.html" class="btn-next">View The Ledger &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-5xl mx-auto w-full mt-12 pt-8 border-t border-gray-200 text-center md:text-left">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            Apenzar Global OS Holdings Inc.
+        </div>
+    </footer>
+
+</body>
+</html>

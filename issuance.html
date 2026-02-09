@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charter Issuance | Apenzar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0A1628; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .card { background: white; border: 1px solid #E5E7EB; padding: 2.5rem; display: flex; flex-direction: column; transition: 0.3s; position: relative; }
+        .card:hover { border-color: var(--navy); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 10; }
+        /* Updated btn-buy to work with <a> tags */
+        .btn-buy { background: var(--navy); color: white; width: 100%; padding: 1.25rem; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; margin-top: auto; display: block; text-align: center; }
+        .btn-buy:hover { background: var(--gold); color: black; border-color: #D4AF37; }
+        .term-banner { background: #0A1628; color: white; text-align: center; padding: 2rem; margin-bottom: 4rem; border-left: 6px solid #D4AF37; }
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #999; transition: 0.2s; }
+        .nav-link:hover { color: #000; }
+    </style>
+</head>
+<body class="py-12 px-6 md:px-12 flex flex-col min-h-screen">
+
+    <nav class="max-w-6xl mx-auto w-full flex justify-between items-center mb-12">
+        <a href="index.html" class="font-black text-xl tracking-tighter uppercase text-[#0A1628]">APENZAR</a>
+        <div class="hidden md:flex gap-6">
+            <a href="market.html" class="nav-link">01 Market</a>
+            <a href="ledger.html" class="nav-link">02 Ledger</a>
+            <a href="mechanism.html" class="nav-link">03 Mechanism</a>
+            <span class="nav-link text-black">04 Access</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <div class="max-w-4xl mx-auto term-banner shadow-lg">
+            <h3 class="serif text-2xl mb-2 text-[#D4AF37]">60-Day Grace Period Active</h3>
+            <p class="text-sm font-light max-w-2xl mx-auto">
+                Your 365-Day Option Term <strong>does not begin at purchase</strong>.
+                <br>It commences upon <strong>First Activation</strong> (when you first provision codes) or automatically at <strong>Day 60</strong> post-purchase. You have 60 days to prepare your network.
+            </p>
+        </div>
+
+        <header class="max-w-4xl mx-auto text-center mb-12">
+            <h1 class="serif text-5xl text-[#0A1628] mb-4">Invitation Options</h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                Secure your Charter Allocation.
+                <br><span class="text-[10px] font-bold text-red-700 bg-red-50 border border-red-200 px-3 py-1 uppercase tracking-widest mt-3 inline-block rounded-sm">● Notice: Next Series Pricing via Market Auction</span>
+            </p>
+        </header>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-stretch mb-24">
+            
+            <div class="card">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Seed Block</div>
+                <h3 class="serif text-3xl text-[#0A1628] mb-4">50 Options</h3>
+                <div class="text-5xl font-light text-[#0A1628] mb-6">$49</div>
+                
+                <div class="bg-gray-50 p-4 mb-6 border border-gray-100 text-center">
+                    <span class="text-[10px] uppercase font-bold text-gray-400 block mb-1">Cost Basis</span>
+                    <span class="text-xl font-bold text-[#0A1628]">$0.98 <span class="text-xs font-normal">/ Unit</span></span>
+                </div>
+                <div class="text-center text-xs text-gray-400 mb-6 font-bold uppercase tracking-widest">
+                    Potential Value*: $2.5M
+                </div>
+                <ul class="text-sm text-gray-500 space-y-3 mb-8 flex-grow">
+                    <li>• Access All 8 Protocols</li>
+                    <li>• <strong>Unlimited Stacking</strong></li>
+                </ul>
+                <a href="https://buy.stripe.com/14A5kEfol9QS6dOdrc1B61l" class="btn-buy">Acquire Seed</a>
+            </div>
+
+            <div class="card border-t-4 border-[#0A1628] shadow-xl">
+                <div class="absolute top-0 right-0 bg-[#0A1628] text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Limited Release</div>
+                <div class="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-2">Portfolio Block</div>
+                <h3 class="serif text-3xl text-[#0A1628] mb-4">500 Options</h3>
+                <div class="text-5xl font-light text-[#0A1628] mb-6">$395</div>
+                
+                <div class="bg-[#0A1628] text-white p-4 mb-6 text-center">
+                    <span class="text-[10px] uppercase font-bold text-[#D4AF37] block mb-1">Cost Basis</span>
+                    <span class="text-xl font-bold">$0.79 <span class="text-xs font-normal text-gray-400">/ Unit</span></span>
+                </div>
+                <div class="text-center text-xs text-gray-500 mb-6 font-bold uppercase tracking-widest">
+                    Potential Value*: $25M
+                </div>
+                <ul class="text-sm text-gray-600 space-y-3 mb-8 flex-grow font-medium">
+                    <li>• Access All 8 Protocols</li>
+                    <li>• <strong>Limit: 3 Blocks per Account</strong></li>
+                </ul>
+                <a href="https://buy.stripe.com/3cIeVe5NLgfgau472O1B61m" class="btn-buy">Acquire Portfolio</a>
+            </div>
+
+            <div class="card bg-[#0A1628] text-white border-gray-800">
+                 <div class="absolute top-0 right-0 bg-white text-[#0A1628] text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Institutional</div>
+                <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Agency Block</div>
+                <h3 class="serif text-3xl text-white mb-4">10,000 Options</h3>
+                <div class="text-5xl font-light text-white mb-6">$2,495</div>
+                
+                <div class="bg-white/10 p-4 mb-6 text-center border border-white/10">
+                    <span class="text-[10px] uppercase font-bold text-[#D4AF37] block mb-1">Cost Basis</span>
+                    <span class="text-xl font-bold text-white">$0.25 <span class="text-xs font-normal text-gray-400">/ Unit</span></span>
+                </div>
+                <div class="text-center text-xs text-gray-400 mb-6 font-bold uppercase tracking-widest">
+                    Potential Value*: $500M+
+                </div>
+                <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
+                    <li>• Institutional Volume</li>
+                    <li>• Recruit Sub-Spotters</li>
+                    <li>• <strong>Limit: 1 Block per Account</strong></li>
+                </ul>
+                <a href="https://buy.stripe.com/eVq00kcc91kmgSs0Eq1B61n" class="btn-buy bg-white text-[#0A1628] hover:bg-[#D4AF37] border-none">Acquire Agency</a>
+            </div>
+
+        </div>
+
+        <div class="max-w-4xl mx-auto border-t border-gray-200 pt-16 text-center">
+            <p class="text-[10px] text-gray-400 mb-8 max-w-xl mx-auto">
+                * Potential Value derived from Q2 Rolling Yield Forecast ($52,400) applied to total Option volume. Past performance does not guarantee future results.
+            </p>
+
+            <h3 class="serif text-2xl text-[#0A1628] mb-6">Clearing Licenses</h3>
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Selected upon Option Activation (No payment today)</p>
+
+            <div class="grid md:grid-cols-3 gap-6 text-center text-sm">
+                <div class="p-6 border border-gray-200 bg-white opacity-60 hover:opacity-100 transition">
+                    <div class="font-bold text-[#0A1628] uppercase mb-2">Standard</div>
+                    <div class="text-2xl font-light text-gray-400 mb-2">$19<span class="text-xs">/mo</span></div>
+                    <div class="text-xs font-bold text-gray-500">Net-60 Payouts</div>
+                </div>
+                <div class="p-6 border-2 border-[#0A1628] bg-white opacity-80 hover:opacity-100 transition">
+                    <div class="font-bold text-[#0A1628] uppercase mb-2">Priority</div>
+                    <div class="text-2xl font-light text-[#0A1628] mb-2">$195<span class="text-xs">/mo</span></div>
+                    <div class="text-xs font-bold text-[#0A1628]">Net-14 • 1.2x Multiplier</div>
+                </div>
+                <div class="p-6 border border-[#0A1628] bg-white shadow-md">
+                    <div class="font-bold text-[#0A1628] uppercase mb-2">Partner</div>
+                    <div class="text-2xl font-light text-gray-500 mb-2">$9,995<span class="text-xs">/yr</span></div>
+                    <div class="text-xs font-bold text-[#D4AF37]">Instant Pay • 20% Override</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="max-w-7xl mx-auto w-full mt-16 pt-8 border-t border-gray-200 text-center md:text-left">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            Apenzar Global OS Holdings Inc. • Beverly Hills, CA
+        </div>
+    </footer>
+
+</body>
+</html>

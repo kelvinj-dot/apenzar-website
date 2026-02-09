@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APENZAR | Global Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #000; antialiased; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .btn-entry { 
+            background: transparent; color: #000; border: 2px solid #000;
+            padding: 1.5rem 5rem; text-transform: uppercase; letter-spacing: 0.2em; 
+            font-size: 0.75rem; font-weight: 700; transition: all 0.4s ease;
+        }
+        .btn-entry:hover { background: #000; color: #FFF; }
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; transition: 0.3s; }
+        .nav-link:hover { color: #000; }
+    </style>
+</head>
+<body class="flex flex-col h-screen justify-between">
+
+    <nav class="p-8 md:p-12 flex justify-between items-start">
+        <div>
+            <div class="text-3xl font-black tracking-tighter uppercase leading-none mb-1">APENZAR</div>
+            <div class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Beverly Hills, CA</div>
+        </div>
+        <div class="hidden md:flex gap-8">
+            <a href="market.html" class="nav-link">01 Market</a>
+            <a href="ledger.html" class="nav-link">02 Ledger</a>
+            <a href="mechanism.html" class="nav-link">03 Mechanism</a>
+            <a href="issuance.html" class="nav-link text-[#0A1628]">04 Access</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col justify-center items-center text-center px-6">
+        <h1 class="serif text-5xl md:text-8xl text-[#000] leading-tight mb-16">
+            MAKE $50,000+ PER SME <br>
+            IN YOUR NETWORK.
+        </h1>
+        
+        <a href="market.html" class="btn-entry">Enter The Market</a>
+    </main>
+
+    <footer class="p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            Apenzar Global OS Holdings Inc. <span class="mx-2 opacity-50">|</span> Est. 2014
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            <span class="text-[#0A1628]">Market Signal:</span> $52,400 Avg Yield (Q2 Rolling)
+        </div>
+    </footer>
+
+</body>
+</html>
