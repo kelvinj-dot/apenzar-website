@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Desk | Apenzar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0A1628; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111; antialiased; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; transition: 0.3s; }
+        .nav-link:hover { color: #0A1628; }
+        
+        .help-card { background: white; border: 1px solid #E5E7EB; padding: 2.5rem; transition: 0.3s; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .help-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        .btn-pay { display: block; width: 100%; padding: 1rem; border: 1px solid #0A1628; text-align: center; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.3s; color: #0A1628; background: transparent; }
+        .btn-pay:hover { background: #0A1628; color: #FFF; }
+        .btn-pay-sub { background: #0A1628; color: #FFF; border: 1px solid #0A1628; }
+        .btn-pay-sub:hover { background: #D4AF37; border-color: #D4AF37; color: #0A1628; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="p-8 md:p-12 flex justify-between items-start bg-white border-b border-gray-100">
+        <div>
+            <a href="index.html" class="block">
+                <div class="text-3xl font-black tracking-tighter uppercase leading-none mb-1">APENZAR</div>
+                <div class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Global OS Holdings</div>
+            </a>
+        </div>
+        <div class="hidden md:flex gap-8">
+            <a href="about.html" class="nav-link">00 About</a>
+            <a href="market.html" class="nav-link">01 Market</a>
+            <a href="ledger.html" class="nav-link">02 Ledger</a>
+            <a href="mechanism.html" class="nav-link">03 Mechanism</a>
+            <a href="issuance.html" class="nav-link">04 Access</a>
+            <a href="help.html" class="nav-link text-[#0A1628]">05 Help</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow px-6 md:px-12 max-w-5xl mx-auto w-full pt-16 md:pt-24 pb-24">
+        
+        <div class="text-center mb-16">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Apenzar Support Desk</div>
+            <h1 class="serif text-4xl md:text-5xl text-[#0A1628] mb-6">General Inquiries</h1>
+            <div class="w-16 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+                To maintain operational efficiency for our Active Principals, Apenzar does not process unsolicited communications via email. <br>
+                Please use this desk for general questions regarding <strong>The Private Market</strong>, <strong>Account Access</strong>, or <strong>Press Inquiries</strong>.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            
+            <div class="help-card">
+                <div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628] mb-4">Standard Ticket</div>
+                    <div class="serif text-3xl text-[#0A1628] mb-2">Single Query</div>
+                    <div class="text-sm font-medium text-gray-400 mb-6">$29 <span class="text-xs font-normal">/ one-time</span></div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Best for one-off clarifications regarding protocol rules, site navigation, or general company information. 
+                    </p>
+                    <ul class="text-xs text-gray-500 space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> 72-Hour Response Time</li>
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> Written Email Response</li>
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> Administrative Support Staff</li>
+                    </ul>
+                </div>
+                <a href="https://buy.stripe.com/14A9AU4JHgfg45G4UG1B61o" class="btn-pay">Open Ticket</a>
+            </div>
+
+            <div class="help-card border-[#0A1628] shadow-lg relative">
+                 <div class="absolute top-0 right-0 bg-[#D4AF37] text-[#0A1628] text-[9px] font-bold uppercase px-3 py-1 tracking-widest">
+                    Recommended
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] mb-4">Priority Access</div>
+                    <div class="serif text-3xl text-[#0A1628] mb-2">Help Desk Pass</div>
+                    <div class="text-sm font-medium text-gray-400 mb-6">$89 <span class="text-xs font-normal">/ month</span></div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        For professional entities requiring ongoing, priority clarification regarding Protocol mechanics or operational eligibility.
+                    </p>
+                    <ul class="text-xs text-[#0A1628] font-medium space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> 5 Priority Tickets / Month</li>
+                        <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> 24-Hour Expedited Response</li>
+                        <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> Senior Support Agent</li>
+                        <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> <strong>1 Business Day Provisioning</strong></li>
+                    </ul>
+                    <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-6 border-t border-gray-100 pt-3">
+                        * Account activation & agent assignment requires 1 business day after purchase.
+                    </p>
+                </div>
+                <a href="https://buy.stripe.com/3cI4gAcc9gfgdGgcn81B61p" class="btn-pay btn-pay-sub">Start Subscription</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 text-center p-6 border border-gray-100 rounded-sm">
+            <h3 class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628] mb-2">Important Disclaimer</h3>
+            <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                This service is for <strong>Informational Support only</strong>. Purchasing a Help Desk ticket does not constitute a consulting engagement, "Shadow Management" relationship, or Advisory contract. <br><br>
+                Questions regarding strategic financial structuring or specific deal-flow must be directed to the <strong>Invitation Option</strong> channels on the Access page.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="p-8 md:p-12 border-t border-gray-200 bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                Apenzar Global OS Holdings Inc.
+            </div>
+            <div class="flex gap-6">
+                 <a href="about.html" class="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-[#0A1628]">About</a>
+                 <a href="help.html" class="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-[#0A1628]">Support</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
