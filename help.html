@@ -12,7 +12,6 @@
         .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; transition: 0.3s; }
         .nav-link:hover { color: #0A1628; }
         
-        /* Pricing Cards */
         .help-card { background: white; border: 1px solid #E5E7EB; padding: 2.5rem; transition: 0.3s; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
         .help-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         
@@ -20,6 +19,10 @@
         .btn-pay:hover { background: #0A1628; color: #FFF; }
         .btn-pay-sub { background: #0A1628; color: #FFF; border: 1px solid #0A1628; }
         .btn-pay-sub:hover { background: #D4AF37; border-color: #D4AF37; color: #0A1628; }
+        
+        .step-item { flex: 1; text-align: center; position: relative; }
+        .step-icon { width: 24px; height: 24px; background: #0A1628; color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; margin-bottom: 8px; }
+        .step-line { position: absolute; top: 12px; left: 50%; width: 100%; height: 1px; background: #E5E7EB; z-index: -1; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -31,26 +34,46 @@
                 <div class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Global OS Holdings</div>
             </a>
         </div>
-        <div class="hidden md:flex gap-6">
+        <div class="hidden md:flex gap-8">
             <a href="about.html" class="nav-link">00 About</a>
             <a href="market.html" class="nav-link">01 Market</a>
             <a href="ledger.html" class="nav-link">02 Ledger</a>
             <a href="mechanism.html" class="nav-link">03 Mechanism</a>
             <a href="issuance.html" class="nav-link">04 Access</a>
-            <span class="nav-link text-black">05 Help</span>
+            <span class="nav-link text-[#0A1628]">05 Help</span>
         </div>
     </nav>
 
     <main class="flex-grow px-6 md:px-12 max-w-5xl mx-auto w-full pt-16 md:pt-24 pb-24">
         
-        <div class="text-center mb-16">
+        <div class="text-center mb-12">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Apenzar Support Desk</div>
-            <h1 class="serif text-4xl md:text-5xl text-[#0A1628] mb-6">General Inquiries</h1>
+            <h1 class="serif text-4xl md:text-5xl text-[#0A1628] mb-6">Unified Inquiry Channel</h1>
             <div class="w-16 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
             <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
                 To maintain operational efficiency for our Active Principals, Apenzar does not process unsolicited communications via email. <br>
-                Please use this desk for general questions regarding <strong>The Private Market</strong>, <strong>Account Access</strong>, or <strong>Press Inquiries</strong>.
+                All Agent, SME, and Deal-Flow inquiries must be initiated through the secure desk below.
             </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto mb-16 pt-8 pb-8 border-t border-b border-gray-100">
+            <div class="flex justify-between">
+                <div class="step-item">
+                    <div class="step-icon">1</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628]">Secure Payment</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">2</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628]">Provisioning</div>
+                    <div class="text-[9px] text-gray-400 mt-1">Gateway Link Emailed</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon" style="background: #D4AF37; color: #0A1628;">3</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628]">Submit Inquiry</div>
+                </div>
+            </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
@@ -58,18 +81,18 @@
             <div class="help-card">
                 <div>
                     <div class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628] mb-4">Standard Ticket</div>
-                    <div class="serif text-3xl text-[#0A1628] mb-2">Single Query</div>
-                    <div class="text-sm font-medium text-gray-400 mb-6">$29 <span class="text-xs font-normal">/ one-time</span></div>
+                    <div class="serif text-3xl text-[#0A1628] mb-2">Priority Inquiry</div>
+                    <div class="text-sm font-medium text-gray-400 mb-6">$19 <span class="text-xs font-normal">/ one-time</span></div>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        Best for one-off clarifications regarding protocol rules, site navigation, or general company information. 
+                        For Agents or Independent Operators (SMEs) requiring clarification on Protocol rules, eligibility, or site navigation.
                     </p>
                     <ul class="text-xs text-gray-500 space-y-3 mb-8">
-                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> 72-Hour Response Time</li>
-                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> <strong>Formal Written Response</strong></li>
-                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> Administrative Support Staff</li>
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> <strong>Intake Link Sent via Email</strong></li>
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> Formal Written Response</li>
+                        <li class="flex items-center"><span class="text-gray-300 mr-2">●</span> 72-Hour Response SLA</li>
                     </ul>
                 </div>
-                <a href="https://buy.stripe.com/14A9AU4JHgfg45G4UG1B61o" class="btn-pay">Open Ticket</a>
+                <a href="https://buy.stripe.com/3cI00kcc93su59Kdrc1B61q" class="btn-pay">Open Ticket</a>
             </div>
 
             <div class="help-card border-[#0A1628] shadow-lg relative">
@@ -77,7 +100,7 @@
                     Recommended
                 </div>
                 <div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] mb-4">Priority Access</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] mb-4">Retainer Access</div>
                     <div class="serif text-3xl text-[#0A1628] mb-2">Help Desk Pass</div>
                     <div class="text-sm font-medium text-gray-400 mb-6">$89 <span class="text-xs font-normal">/ month</span></div>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">
@@ -86,22 +109,21 @@
                     <ul class="text-xs text-[#0A1628] font-medium space-y-3 mb-8">
                         <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> 5 Priority Tickets / Month</li>
                         <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> 24-Hour Expedited Response</li>
-                        <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> Senior Support Agent</li>
                         <li class="flex items-center"><span class="text-[#D4AF37] mr-2">●</span> <strong>1 Business Day Provisioning</strong></li>
                     </ul>
                     <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-6 border-t border-gray-100 pt-3">
                         * Account activation & agent assignment requires 1 business day after purchase.
                     </p>
                 </div>
-                <a href="https://buy.stripe.com/3cI4gAcc9gfgdGgcn81B61p" class="btn-pay btn-pay-sub">Start Subscription</a>
+                <a href="#" class="btn-pay btn-pay-sub">Start Subscription</a>
             </div>
         </div>
 
         <div class="bg-gray-50 text-center p-6 border border-gray-100 rounded-sm">
             <h3 class="text-[10px] font-bold uppercase tracking-widest text-[#0A1628] mb-2">Important Disclaimer</h3>
             <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                This service is for <strong>Informational Support only</strong>. Purchasing a Help Desk ticket does not constitute a consulting engagement, "Shadow Management" relationship, or Advisory contract. <br><br>
-                Questions regarding strategic financial structuring or specific deal-flow must be directed to the <strong>Invitation Option</strong> channels on the Access page.
+                This service is for <strong>Informational Support only</strong>. <br>
+                All inquiries, including those regarding <strong>Strategic Financial Structuring</strong>, <strong>Deal-Flow</strong>, or <strong>Invitation Options</strong>, must be initiated via a Priority Inquiry ticket above to ensure proper routing.
             </p>
         </div>
 
