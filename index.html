@@ -3,125 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>The Apenzar Private Market | Cycle 2026-Q2</title>
+    <title>Apenzar Grid | Brand Placement</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #0A1628; --gold: #D4AF37; }
-        body { font-family: 'Inter', sans-serif; background: #0A1628; color: white; antialiased; display: flex; flex-direction: column; min-h-screen; }
-        .serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #111; antialiased; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
         
-        /* Updated padding for mobile first, larger on desktop */
-        .hero-container { 
-            flex-grow: 1; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding: 2rem 1rem; /* Reduced padding for mobile */
-            position: relative; 
-        }
+        /* The "Safety Orange" Accent */
+        .bg-safety { background-color: #FF4D00; }
+        .text-safety { color: #FF4D00; }
+        .border-safety { border-color: #FF4D00; }
+        .hover-safety:hover { background-color: #E64500; }
         
-        @media (min-width: 768px) {
-            .hero-container { padding: 4rem 2rem; }
-        }
-        
-        .status-badge { display: inline-flex; align-items: center; border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1rem; backdrop-filter: blur(10px); margin-bottom: 2rem; }
-        .pulsing-dot { width: 8px; height: 8px; background-color: #D4AF37; border-radius: 50%; margin-right: 0.75rem; animation: pulse 2s infinite; }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-        }
-        
-        /* Updated card padding for mobile responsiveness */
-        .access-card { 
-            background: white; 
-            color: #0A1628; 
-            padding: 2rem; /* Reduced from 3rem for mobile */
-            max-w-md w-full; 
-            position: relative; 
-            margin-top: 3rem; 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
-            width: 100%; /* Ensure it doesn't overflow width */
-        }
-
-        @media (min-width: 768px) {
-            .access-card { padding: 3rem; }
-        }
-
-        .gold-bar { height: 4px; width: 100%; background: #D4AF37; position: absolute; top: 0; left: 0; }
-        
-        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: radial-gradient(white 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen border-t-[10px] border-[#FF4D00]">
 
-    <div class="bg-grid"></div>
-
-    <nav class="w-full p-6 md:p-12 absolute top-0 left-0 z-50 flex justify-between items-center">
-        <div>
-            <div class="text-xl md:text-2xl font-black tracking-tighter uppercase leading-none mb-1 text-white">APENZAR</div>
-            <div class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">Global OS Holdings</div>
+    <nav class="w-full py-5 px-6 md:px-12 flex justify-between items-center border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur z-50">
+        <div class="flex items-center gap-3">
+            <div class="font-black text-xl tracking-tighter uppercase">APENZAR <span class="text-[#FF4D00]">GRID</span></div>
         </div>
-        <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 hidden sm:block">
-            Market Status: <span class="text-white">Structuring Cycle 26-Q2</span>
+        <div class="mono text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm uppercase tracking-wide">
+            Program Status: <span class="text-[#FF4D00]">2026 Pilot (Open)</span>
         </div>
     </nav>
 
-    <div class="hero-container relative z-10">
+    <main class="flex-grow w-full mx-auto">
         
-        <div class="status-badge">
-            <div class="pulsing-dot"></div>
-            <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-300">Forward Allocation Window</span>
-        </div>
-        
-        <h1 class="serif text-4xl md:text-7xl mb-6 leading-tight">
-            The Q2 Sovereign <br> Allocation Cycle.
-        </h1>
-        
-        <p class="text-base md:text-xl text-gray-400 max-w-2xl font-light leading-relaxed mb-8 px-4">
-            The Private Market is now accepting access retainers for the <strong>2026 Second Quarter Edition</strong>. Positions are limited to strategic originators and qualified suppliers.
-        </p>
-
-        <div class="access-card text-left">
-            <div class="gold-bar"></div>
-            <div class="flex justify-between items-start mb-6">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Target Tranche</span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Cycle 26-Q2</span>
-            </div>
-            
-            <h2 class="serif text-2xl md:text-3xl mb-2">Secure Precedence</h2>
-            <div class="text-xl md:text-2xl font-bold mb-6">$295.00 <span class="text-xs font-normal text-gray-500 uppercase tracking-widest">/ Quarterly Access</span></div>
-            
-            <p class="text-sm text-gray-500 mb-8 leading-relaxed">
-                Market entry is strictly gated. Securing your position during the Structuring Phase grants <strong>Precedence</strong> on all mandates released in the upcoming fiscal quarter.
+        <div class="max-w-5xl mx-auto px-6 pt-20 pb-24 md:pt-32 md:pb-32">
+            <p class="mono text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">
+                Physical Infrastructure as a Service (PIaaS)
             </p>
-            
-            <ul class="space-y-3 text-xs font-medium text-gray-600 mb-8 border-t border-gray-100 pt-4">
-                <li class="flex items-center"><span class="text-[#D4AF37] mr-2">✓</span> <strong>Project Basalt:</strong> Priority Review of Hospitality Requirements.</li>
-                <li class="flex items-center"><span class="text-[#D4AF37] mr-2">✓</span> <strong>The Syndicate:</strong> Priority Charter Registration.</li>
-            </ul>
-
-            <a href="https://buy.stripe.com/6oUeVea41e7831C3QC1B61r" class="block w-full text-center bg-[#0A1628] text-white py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#0A1628] transition duration-300">
-                Initiate Subscription
-            </a>
-            
-            <div class="mt-4 text-center">
-                <span class="text-[9px] text-gray-400 uppercase tracking-widest">
-                    <span class="text-[#D4AF37]">Note:</span> You are securing a position in the Q2 Queue.
-                </span>
+            <h1 class="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter text-black mb-8 uppercase">
+                Stop Paying<br>
+                <span class="text-gray-300">For Returns.</span>
+            </h1>
+            <div class="max-w-3xl border-l-4 border-[#FF4D00] pl-6 md:pl-8 py-2">
+                <p class="text-lg md:text-2xl font-medium text-gray-800 leading-snug mb-6">
+                    The Apenzar Grid offers Amazon Sellers & DTC Brands instant physical showrooms.
+                    <br><span class="text-gray-400">Deploy inventory to a distributed network of high-traffic zones across Tier-1 US Markets.</span>
+                </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="https://buy.stripe.com/eVq7sM6RPfbc1Xyaf01B61s" class="inline-block bg-[#FF4D00] hover-safety text-white font-bold text-sm md:text-base uppercase tracking-widest py-4 px-8 transition-all shadow-lg text-center">
+                        Start Brand Intake - $99
+                    </a>
+                    <div class="flex flex-col justify-center text-xs text-gray-500 md:pl-2">
+                        <span>Includes: <strong class="text-black">Location Matching</strong></span>
+                        <span>Zero Leases. Zero Staff.</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-    </div>
+        <div class="bg-gray-50 border-y border-gray-200 py-20 px-6">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 uppercase tracking-tight">The Digital Trap.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        You spend huge capital on CAC, only to lose 30% of revenue to returns because customers can't touch, feel, or size your product.
+                    </p>
+                    <ul class="space-y-4 font-medium text-sm">
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">X</span>
+                            <span>Rent a Store: <span class="text-gray-400">Too Expensive (5-Year Lease)</span></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">X</span>
+                            <span>Run Ads: <span class="text-gray-400">Skyrocketing Costs</span></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>The Grid: <span class="text-black">Dedicated Physical Point</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#FF4D00] text-white text-[10px] font-bold px-3 py-1 uppercase">Channel Benchmark</div>
+                    <div class="text-6xl font-black text-black mb-2">-94%</div>
+                    <div class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Return Rate Delta</div>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        *Industry comparison of "Touch-First" physical commerce vs pure-play E-commerce return rates.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <footer class="w-full p-6 md:p-8 text-center border-t border-white/10">
-        <div class="text-[9px] font-bold uppercase tracking-widest text-gray-500">
-            &copy; 2014—2026 Apenzar Global OS Holdings Inc. | All Mandates Confidential
+        <div class="py-24 px-6 max-w-6xl mx-auto">
+            <div class="mb-16 text-center md:text-left">
+                <h2 class="text-4xl font-bold uppercase tracking-tight mb-4">Your Brand. Nationwide.</h2>
+                <p class="text-gray-500 max-w-2xl">We are aggregating demand for the 2026 Pilot. We distribute inventory to maximize geographic reach.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border border-gray-200 p-8 hover:border-[#FF4D00] transition group">
+                    <div class="text-[#FF4D00] font-black text-5xl mb-6 opacity-30 group-hover:opacity-100 transition">01</div>
+                    <h3 class="font-bold text-xl mb-3">Hardware</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        We provide the <strong>Apenzar Display Unit</strong>. It’s secure, lit, and premium. You just ship us the product inventory.
+                    </p>
+                </div>
+                <div class="border border-gray-200 p-8 hover:border-[#FF4D00] transition group">
+                    <div class="text-[#FF4D00] font-black text-5xl mb-6 opacity-30 group-hover:opacity-100 transition">02</div>
+                    <h3 class="font-bold text-xl mb-3">Interaction</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Customers touch and try. To buy, they scan a QR code linking directly to your <strong>Amazon/Shopify Store</strong>.
+                    </p>
+                </div>
+                <div class="border border-gray-200 p-8 hover:border-[#FF4D00] transition group">
+                    <div class="text-[#FF4D00] font-black text-5xl mb-6 opacity-30 group-hover:opacity-100 transition">03</div>
+                    <h3 class="font-bold text-xl mb-3">Flexible Terms</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        No 5-year leases. Just a flat monthly subscription per location (e.g., $300/mo). <strong>Cancel anytime.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="intake" class="bg-[#111] text-white py-24 px-6 md:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="mono text-[#FF4D00] text-xs font-bold uppercase tracking-widest mb-6">
+                    Pilot Status: Accepting Applicants
+                </p>
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-8">
+                    Secure Your Allocation.
+                </h2>
+                <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+                    We maintain strict <strong>Category Exclusivity</strong> per location (e.g., only one Watch Brand per hotel lobby). 
+                    The $99 Intake Fee secures your category review.
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="https://buy.stripe.com/eVq7sM6RPfbc1Xyaf01B61s" class="w-full md:w-auto bg-[#FF4D00] hover:bg-white hover:text-[#FF4D00] text-white font-bold text-lg uppercase tracking-widest py-6 px-12 transition-all">
+                        Start Brand Intake - $99
+                    </a>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-6 uppercase tracking-widest">
+                    Intake Includes: Category Analysis & Location Assignment
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-16 text-center px-6">
+        <div class="flex flex-col items-center">
+            <span class="font-black text-2xl tracking-tighter uppercase mb-4 text-[#111]">APENZAR</span>
+            
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">
+                <span>Beverly Hills, CA</span>
+                <span class="hidden md:inline text-gray-300">|</span>
+                <span>Est. 2014</span>
+            </div>
+
+            <p class="text-[10px] text-gray-400 max-w-md leading-relaxed">
+                Global Slotting Protocol & Physical Infrastructure.<br>
+                Apenzar Private Market © 2014-2026. All Rights Reserved.
+            </p>
         </div>
     </footer>
 
