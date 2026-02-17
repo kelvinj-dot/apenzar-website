@@ -1,168 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apenzar | Private Market Clearinghouse</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --orange: #FF4D00; --gold: #D4AF37; }
+        :root { 
+            --midnight: #0A0A0A; --trust-blue: #2563EB; --export-cobalt: #1D4ED8;
+            --exchange-cyan: #06B6D4; --spatial-indigo: #4338CA; --reserve-champagne: #C5A059;
+            --bg-light: #030303; --slate-line: rgba(255,255,255,0.05);
+        }
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #050505; 
-            color: #FFFFFF; 
-            antialiased; 
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: #FFFFFF; antialiased; 
+            background-image: linear-gradient(var(--slate-line) 1px, transparent 1px), linear-gradient(90deg, var(--slate-line) 1px, transparent 1px);
+            background-size: 40px 40px; overflow-x: hidden;
         }
         .serif { font-family: 'Playfair Display', serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         
-        /* Interactive Hover Targets */
-        .hover-trigger:hover .hover-target { opacity: 1; transform: translateX(0); }
-        .hover-target { opacity: 0; transform: translateX(-15px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* Row Transitions */
-        .row-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-left: 2px solid transparent; }
-        .row-grid:hover { border-left-color: var(--orange); background: linear-gradient(90deg, rgba(255,77,0,0.05) 0%, transparent 100%); padding-left: 2.5rem; }
-        .row-syndicate:hover { border-left-color: var(--gold); background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, transparent 100%); padding-left: 2.5rem; }
-        
-        /* CSS Ping/Pulse Indicators */
-        @keyframes pulse-soft {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
+        .vault-card { 
+            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05); border-top: 4px solid #334155;
+            border-radius: 12px; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .animate-pulse-soft { animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .vault-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8) 100%); z-index: 1; pointer-events: none; }
+        .vault-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); }
+        
+        .card-coalition:hover { border-top-color: var(--trust-blue); }
+        .card-export:hover { border-top-color: var(--export-cobalt); }
+        .card-exchange:hover { border-top-color: var(--exchange-cyan); }
+        .card-spatial:hover { border-top-color: var(--spatial-indigo); }
+        .card-reserve:hover { border-top-color: var(--reserve-champagne); }
+        .card-caribbean:hover { border-top-color: #FFFFFF; }
 
-        /* Dark Mode Locked Security Pattern */
-        .locked-pattern {
-            background-image: repeating-linear-gradient(45deg, #050505, #050505 10px, #0a0a0a 10px, #0a0a0a 20px);
+        .content-layer { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+
+        .btn-master {
+            display: inline-flex; justify-content: center; align-items: center; gap: 0.75rem; width: 100%;
+            background: #FFFFFF; color: #000000; padding: 1.25rem 2rem; text-transform: uppercase; 
+            font-size: 0.875rem; font-weight: 700; letter-spacing: 0.15em; transition: all 0.3s ease; 
+            font-family: 'JetBrains Mono', monospace; border-radius: 4px; border: 1px solid #FFFFFF;
         }
+        .btn-master:hover { background: transparent; color: #FFFFFF; }
+
+        .locked-badge {
+            background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1); color: #888;
+            font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+            padding: 8px 16px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center;
+            transition: all 0.3s;
+        }
+        .vault-card:hover .locked-badge { background: #FFFFFF; color: #000000; }
+
+        @keyframes pulse-soft { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+        .animate-pulse-soft { animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; } .delay-200 { animation-delay: 200ms; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen border-t-[6px] border-[#D4AF37]">
+<body class="flex flex-col min-h-screen border-t-[8px] border-[#FFFFFF]">
 
-    <nav class="w-full py-6 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 border-b border-white/10 sticky top-0 bg-[#050505]/90 backdrop-blur-md z-50">
-        <div class="flex items-center gap-3">
-            <span class="font-black text-2xl tracking-tighter uppercase text-white">APENZAR</span>
+    <nav class="w-full py-5 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#030303]/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5 shadow-xl">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
+            <span class="font-black text-2xl tracking-[0.15em] uppercase text-white">APENZAR</span>
         </div>
-        <div class="mono text-[10px] text-gray-400 uppercase tracking-widest flex items-center gap-4 border border-white/10 px-4 py-2 bg-black/50 shadow-inner">
-            <span class="hidden md:inline">Beverly Hills, CA</span>
-            <span class="text-white/20 hidden md:inline">|</span>
-            <span class="hidden md:inline">Est. 2014</span>
-            <span class="text-white/20 hidden md:inline">|</span>
-            <span class="flex items-center gap-2 text-emerald-500">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-soft"></span> System Secure
-            </span>
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center gap-4 text-[10px] uppercase tracking-widest font-bold text-gray-500 font-mono">
+                <span>Beverly Hills, CA</span><span class="text-gray-800">|</span>
+                <span class="text-white">Public Directory</span><span class="text-gray-800">|</span>
+                <span class="flex items-center gap-2 text-red-400 bg-red-400/10 px-3 py-1.5 rounded border border-red-400/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse-soft"></span> Network Locked
+                </span>
+            </div>
+            <a href="passport.html" class="text-[10px] uppercase tracking-widest font-bold text-black bg-white px-5 py-2.5 rounded hover:bg-gray-200 transition-colors font-mono shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                Acquire Passport →
+            </a>
         </div>
     </nav>
 
-    <main class="flex-grow w-full max-w-6xl mx-auto px-6 py-20 md:py-32 flex flex-col justify-center">
+    <main class="flex-grow w-full">
         
-        <div class="mb-20">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-6 flex items-center gap-3">
-                <div class="w-2 h-2 bg-[#D4AF37] rounded-sm"></div>
-                Tier 1: Master Directory
-            </span>
-            <h1 class="serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-8 leading-[0.9]">
-                The Private Market.
+        <header class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto text-center relative z-10">
+            <div class="fade-in-up inline-block mb-8 px-5 py-2 border border-white/20 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-white rounded-sm font-mono">
+                The Private Market Clearinghouse
+            </div>
+            
+            <h1 class="fade-in-up delay-100 serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-medium text-white tracking-tight mb-8">
+                Asymmetric Market <br>
+                <span class="text-gray-500 font-light italic">Advantages.</span>
             </h1>
-            <div class="border-l-2 border-white/20 pl-6 py-2 max-w-3xl">
-                <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
-                    Apenzar operates a strictly gatekept institutional clearinghouse and procurement proxy. We execute highly restricted mandates across physical infrastructure deployment, volumetric supply chain aggregation, and the forensic valuation of human capital.
-                </p>
-                <p class="text-white text-[10px] font-mono tracking-widest uppercase mt-6 font-bold flex items-center gap-2 opacity-50">
-                    <span class="w-1.5 h-1.5 bg-white"></span> Select an active protocol below to authorize routing.
-                </p>
+            
+            <p class="fade-in-up delay-200 text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                Apenzar engineers sophisticated quantitative protocols for independent operators, real estate developers, and institutional capital. We operate an autonomous, closed-loop proprietary financial network. Please review our public prospectuses below.
+            </p>
+
+            <div class="fade-in-up delay-200 max-w-md mx-auto">
+                <a href="#protocols" class="btn-master bg-transparent border-white/30 text-white hover:bg-white hover:text-black">Explore Public Directory <span class="text-lg leading-none">↓</span></a>
             </div>
-        </div>
+        </header>
 
-        <div class="border-t border-white/10 flex flex-col">
-
-            <a href="syndicate.html" class="block border-b border-white/10 py-12 px-4 md:px-8 row-transition row-syndicate group hover-trigger cursor-pointer relative">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                    <div class="lg:w-2/3">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="mono text-[10px] text-[#D4AF37] font-bold uppercase tracking-widest border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1.5 flex items-center gap-2">
-                                <span class="relative flex h-1.5 w-1.5">
-                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
-                                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#D4AF37]"></span>
-                                </span> Open Architecture
-                            </span>
-                            <span class="mono text-[10px] text-gray-500 font-bold uppercase tracking-widest">Div // 01</span>
-                        </div>
-                        <h2 class="serif text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white group-hover:text-[#D4AF37] transition-colors">01. The Syndicate</h2>
-                        <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl font-light">
-                            Buy-Side Aggregation Proxy. We weaponize consolidated institutional demand to extract absolute floor pricing from global physical supply chains through volumetric master anchors.
-                        </p>
+        <section id="protocols" class="py-24 px-6 md:px-12 relative z-20 border-t border-white/10 bg-[#0A0A0A] scroll-mt-20">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6">
+                    <div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-gray-500 block mb-4 flex items-center gap-2">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg> Walled Garden Intranet
+                        </span>
+                        <h3 class="serif text-3xl md:text-4xl text-white font-medium">The Network Protocols.</h3>
                     </div>
-                    <div class="lg:w-1/3 flex lg:justify-end">
-                        <div class="hover-target text-[#D4AF37] font-mono text-[11px] font-bold uppercase tracking-[0.2em] flex items-center gap-3 border border-[#D4AF37]/50 px-6 py-4 bg-[#D4AF37]/5 backdrop-blur-sm">
-                            Enter Terminal <span class="text-lg leading-none transition-transform group-hover:translate-x-1">→</span>
-                        </div>
-                    </div>
+                    <a href="passport.html" class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#06B6D4] bg-[#06B6D4]/10 hover:bg-[#06B6D4] hover:text-[#0A0A0A] transition-colors border border-[#06B6D4]/30 px-6 py-3 rounded-sm shadow-sm cursor-pointer text-center">
+                        Acquire Terminal Passport →
+                    </a>
                 </div>
-            </a>
 
-            <a href="grid.html" class="block border-b border-white/10 py-12 px-4 md:px-8 row-transition row-grid group hover-trigger cursor-pointer relative">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                    <div class="lg:w-2/3">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="mono text-[10px] text-[#FF4D00] font-bold uppercase tracking-widest border border-[#FF4D00]/30 bg-[#FF4D00]/10 px-3 py-1.5 flex items-center gap-2">
-                                <span class="relative flex h-1.5 w-1.5">
-                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4D00] opacity-75"></span>
-                                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#FF4D00]"></span>
-                                </span> Active Pilot
-                            </span>
-                            <span class="mono text-[10px] text-gray-500 font-bold uppercase tracking-widest">Div // 02</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <a href="coalition.html" class="vault-card card-coalition p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-[#2563EB]/10 text-[#60A5FA] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#2563EB]/30">
+                                    Inbound Aggregation
+                                </span>
+                            </div>
+                            <h4 class="serif text-3xl text-white mb-3">The Coalition</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Buy-Side Volume Aggregation. We merge purchasing power to force Fortune-500 wholesale pricing. Initiate an order, lower your costs, and earn a massive cash dividend on the group's savings.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
                         </div>
-                        <h2 class="serif text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white group-hover:text-[#FF4D00] transition-colors">02. The Grid</h2>
-                        <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl font-light">
-                            Physical Infrastructure as a Service (PIaaS). Rapid deployment architecture and spatial logistics for high-volume digital brands requiring immediate physical market penetration.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/3 flex lg:justify-end">
-                        <div class="hover-target text-[#FF4D00] font-mono text-[11px] font-bold uppercase tracking-[0.2em] flex items-center gap-3 border border-[#FF4D00]/50 px-6 py-4 bg-[#FF4D00]/5 backdrop-blur-sm">
-                            Initialize Protocol <span class="text-lg leading-none transition-transform group-hover:translate-x-1">→</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+                    </a>
 
-            <div class="block border-b border-white/10 py-12 px-4 md:px-8 locked-pattern opacity-40 grayscale cursor-not-allowed select-none">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                    <div class="lg:w-2/3">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="mono text-[10px] text-gray-400 font-bold uppercase tracking-widest border border-gray-700 bg-gray-900 px-3 py-1.5 flex items-center gap-2 shadow-inner">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                                Intake Paused
-                            </span>
-                            <span class="mono text-[10px] text-gray-600 font-bold uppercase tracking-widest">Div // 03</span>
+                    <a href="export.html" class="vault-card card-export p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-[#1D4ED8]/10 text-[#60A5FA] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#1D4ED8]/30">
+                                    Outbound Liquidation
+                                </span>
+                            </div>
+                            <h4 class="serif text-3xl text-white mb-3">Macro-Export</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Sell-Side Inventory Liquidation. We aggregate fragmented domestic inventory into massive institutional export blocks. Safely clear overseas trade with zero cross-border execution risk.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
                         </div>
-                        <h2 class="serif text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gray-500">03. The 1% Audit</h2>
-                        <p class="text-gray-500 text-sm md:text-base leading-relaxed max-w-2xl font-light">
-                            Forensic valuation of social capital. Deep-tier algorithmic auditing, network leverage mapping, and liquidity mapping of ultra-high-net-worth operational networks.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/3 flex lg:justify-end">
-                        <div class="text-gray-500 font-mono text-[11px] font-bold uppercase tracking-[0.2em] flex items-center gap-3 border border-gray-800 px-6 py-4 bg-[#0A0A0A]">
-                            Vault Locked <span class="text-lg leading-none">🔒</span>
+                    </a>
+
+                    <a href="exchange.html" class="vault-card card-exchange p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-[#06B6D4]/10 text-[#06B6D4] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#06B6D4]/30">
+                                    Decentralized Capacity
+                                </span>
+                            </div>
+                            <h4 class="serif text-3xl text-white mb-3">Allocation Exchange</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                The Private Routing Floor. A strictly gated exchange where industry professionals bid their network capacity against a Performance Escrow to win massive, project-derived routing commissions.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="spatial.html" class="vault-card card-spatial p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-[#4338CA]/10 text-[#818CF8] border border-[#4338CA]/30 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
+                                    Real Estate Securitization
+                                </span>
+                            </div>
+                            <h4 class="serif text-3xl text-white mb-3">Spatial Capital</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Comprehensive footprint engineering. Master Leases to eliminate personal liability, coupled with algorithmic retail nodes to monetize dead commercial square footage.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="reserve.html" class="vault-card card-reserve p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-[#C5A059]/10 text-[#C5A059] border border-[#C5A059]/30 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
+                                    Experiential Yield
+                                </span>
+                            </div>
+                            <h4 class="serif italic text-3xl text-white mb-3">The Reserve</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                CapEx Securitization for ultra-luxury hospitality. We orchestrate the deployment of institutional assets (automotive, fine art, consumables) to generate massive dual-yield revenue.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="caribbean.html" class="vault-card card-caribbean p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
+                        <div class="content-layer">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-white/10 text-white border border-white/20 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
+                                    Macro Commodities
+                                </span>
+                            </div>
+                            <h4 class="serif text-3xl text-white mb-3">Caribbean Ops</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Buy-Side volume aggregation for the premium regional hospitality sector. We consolidate fragmented supply chains into massive master-anchors to capture wholesale margin delta.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="locked-badge">Read Prospectus <span>→</span></div>
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-
-        </div>
+        </section>
 
     </main>
 
-    <footer class="w-full py-12 text-center border-t border-white/10 bg-[#050505]">
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em] font-mono">
-            Apenzar Private Market Proxy © 2014-2026. All Rights Reserved.
-        </p>
+    <footer class="bg-[#030303] border-t border-white/5 py-16 text-center px-6 mt-auto">
+        <div class="flex flex-col items-center">
+            <span class="font-black text-2xl tracking-[0.15em] uppercase text-white mb-6 block">APENZAR</span>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-8 font-mono">
+                <span>Beverly Hills, CA</span><span class="hidden md:inline text-gray-800">|</span>
+                <span>Private Market Clearinghouse</span><span class="hidden md:inline text-gray-800">|</span>
+                <span>Est. 2014</span>
+            </div>
+            <p class="text-[9px] text-gray-600 uppercase tracking-[0.2em] font-semibold font-mono">
+                Institutional Financial Engineering © 2014-2026. All Rights Reserved.
+            </p>
+        </div>
     </footer>
 
 </body>
