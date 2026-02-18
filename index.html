@@ -3,239 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apenzar | Private Market Clearinghouse</title>
+    <title>Apenzar | Global SME Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --midnight: #0A0A0A; --trust-blue: #2563EB; --export-cobalt: #1D4ED8;
-            --exchange-cyan: #06B6D4; --spatial-indigo: #4338CA; --reserve-champagne: #C5A059;
-            --bg-light: #030303; --slate-line: rgba(255,255,255,0.05);
+            --midnight: #0B132B; --trust-blue: #2563EB; --export-cobalt: #1D4ED8; 
+            --slate-line: #F1F5F9; --bg-light: #FFFFFF;
         }
         body { 
-            font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: #FFFFFF; antialiased; 
+            font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--midnight); antialiased; 
             background-image: linear-gradient(var(--slate-line) 1px, transparent 1px), linear-gradient(90deg, var(--slate-line) 1px, transparent 1px);
             background-size: 40px 40px; overflow-x: hidden;
         }
         .serif { font-family: 'Playfair Display', serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         
-        .vault-card { 
-            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05); border-top: 4px solid #334155;
-            border-radius: 12px; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .vault-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8) 100%); z-index: 1; pointer-events: none; }
-        .vault-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); }
+        .card-clean { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .card-clean:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15); border-color: rgba(37, 99, 235, 0.3); }
+
+        .vault-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-top: 4px solid #CBD5E1; border-radius: 12px; transition: all 0.4s ease; }
+        .vault-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08); background: #FFFFFF; }
         
-        .card-coalition:hover { border-top-color: var(--trust-blue); }
-        .card-export:hover { border-top-color: var(--export-cobalt); }
-        .card-exchange:hover { border-top-color: var(--exchange-cyan); }
-        .card-spatial:hover { border-top-color: var(--spatial-indigo); }
-        .card-reserve:hover { border-top-color: var(--reserve-champagne); }
-        .card-caribbean:hover { border-top-color: #FFFFFF; }
+        .card-exchange:hover { border-top-color: #06B6D4; }
+        .card-spatial:hover { border-top-color: #4338CA; }
+        .card-reserve:hover { border-top-color: #C5A059; }
+        .card-caribbean:hover { border-top-color: #0B132B; }
 
-        .content-layer { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+        .btn-primary { display: inline-flex; justify-content: center; align-items: center; gap: 0.75rem; width: 100%; background: var(--trust-blue); color: #FFFFFF; padding: 1.25rem 2.5rem; text-transform: uppercase; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; transition: all 0.3s ease; font-family: 'JetBrains Mono', monospace; border-radius: 6px; box-shadow: 0 10px 20px rgba(37,99,235,0.2); }
+        .btn-primary:hover { background: var(--midnight); box-shadow: 0 15px 30px rgba(11,19,43,0.3); transform: translateY(-2px); }
 
-        .btn-master {
-            display: inline-flex; justify-content: center; align-items: center; gap: 0.75rem; width: 100%;
-            background: #FFFFFF; color: #000000; padding: 1.25rem 2rem; text-transform: uppercase; 
-            font-size: 0.875rem; font-weight: 700; letter-spacing: 0.15em; transition: all 0.3s ease; 
-            font-family: 'JetBrains Mono', monospace; border-radius: 4px; border: 1px solid #FFFFFF;
-        }
-        .btn-master:hover { background: transparent; color: #FFFFFF; }
+        .btn-secondary { display: inline-flex; justify-content: center; align-items: center; gap: 0.75rem; width: 100%; background: #FFFFFF; color: var(--midnight); padding: 1.25rem 2.5rem; text-transform: uppercase; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; transition: all 0.3s ease; font-family: 'JetBrains Mono', monospace; border-radius: 6px; border: 1px solid #E2E8F0; }
+        .btn-secondary:hover { border-color: var(--midnight); background: #F8FAFC; }
 
-        .locked-badge {
-            background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1); color: #888;
-            font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
-            padding: 8px 16px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center;
-            transition: all 0.3s;
-        }
-        .vault-card:hover .locked-badge { background: #FFFFFF; color: #000000; }
+        .gradient-text { background: linear-gradient(135deg, var(--midnight) 0%, var(--trust-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        @keyframes pulse-soft { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
-        .animate-pulse-soft { animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
         .delay-100 { animation-delay: 100ms; } .delay-200 { animation-delay: 200ms; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen border-t-[8px] border-[#FFFFFF]">
+<body class="flex flex-col min-h-screen border-t-[8px] border-[#2563EB]">
 
-    <nav class="w-full py-5 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#030303]/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5 shadow-xl">
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm">
         <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
-            <span class="font-black text-2xl tracking-[0.15em] uppercase text-white">APENZAR</span>
+            <span class="font-black text-2xl tracking-[0.15em] uppercase text-[#0B132B]">APENZAR</span>
         </div>
         <div class="flex items-center gap-6">
-            <div class="hidden md:flex items-center gap-4 text-[10px] uppercase tracking-widest font-bold text-gray-500 font-mono">
-                <span>Beverly Hills, CA</span><span class="text-gray-800">|</span>
-                <span class="text-white">Public Directory</span><span class="text-gray-800">|</span>
-                <span class="flex items-center gap-2 text-red-400 bg-red-400/10 px-3 py-1.5 rounded border border-red-400/20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse-soft"></span> Network Locked
-                </span>
+            <div class="hidden lg:flex items-center gap-4 text-[10px] uppercase tracking-widest font-bold text-gray-400 font-mono">
+                <span class="text-[#0B132B]">Beverly Hills, CA</span><span class="text-gray-300">|</span>
+                <span>Est. 2014</span>
             </div>
-            <a href="passport.html" class="text-[10px] uppercase tracking-widest font-bold text-black bg-white px-5 py-2.5 rounded hover:bg-gray-200 transition-colors font-mono shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                Acquire Passport →
+            <a href="passport.html" class="text-[10px] uppercase tracking-widest font-bold text-[#2563EB] bg-blue-50 px-5 py-2.5 rounded hover:bg-blue-100 transition-colors font-mono border border-blue-100 shadow-sm flex items-center gap-2">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                Network Login
             </a>
         </div>
     </nav>
 
     <main class="flex-grow w-full">
         
-        <header class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto text-center relative z-10">
-            <div class="fade-in-up inline-block mb-8 px-5 py-2 border border-white/20 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-white rounded-sm font-mono">
-                The Private Market Clearinghouse
+        <header class="py-24 md:py-36 px-6 md:px-12 max-w-6xl mx-auto text-center relative z-10">
+            <div class="fade-in-up inline-block mb-6 px-5 py-2 border border-blue-100 bg-blue-50 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB] rounded-full font-mono">
+                Eradicating the SME Penalty
             </div>
             
-            <h1 class="fade-in-up delay-100 serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-medium text-white tracking-tight mb-8">
-                Asymmetric Market <br>
-                <span class="text-gray-500 font-light italic">Advantages.</span>
+            <h1 class="fade-in-up delay-100 serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-medium text-[#0B132B] tracking-tight mb-8">
+                Operate like a startup.<br>
+                <span class="gradient-text italic">Scale like an institution.</span>
             </h1>
             
-            <p class="fade-in-up delay-200 text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto mb-12">
-                Apenzar engineers sophisticated quantitative protocols for independent operators, real estate developers, and institutional capital. We operate an autonomous, closed-loop proprietary financial network. Please review our public prospectuses below.
+            <p class="fade-in-up delay-200 text-lg md:text-xl text-gray-500 font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                Giant corporations win because they buy in massive bulk and move inventory globally. As an independent operator, you pay the "small business penalty" at every turn. Apenzar merges your operational volume with thousands of others globally to give you the unstoppable financial leverage of a giant.
             </p>
 
-            <div class="fade-in-up delay-200 max-w-md mx-auto">
-                <a href="#protocols" class="btn-master bg-transparent border-white/30 text-white hover:bg-white hover:text-black">Explore Public Directory <span class="text-lg leading-none">↓</span></a>
+            <div class="fade-in-up delay-200 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
+                <a href="#solutions" class="btn-primary">Explore Solutions</a>
+                <a href="passport.html" class="btn-secondary">Acquire Passport</a>
             </div>
         </header>
 
-        <section id="protocols" class="py-24 px-6 md:px-12 relative z-20 border-t border-white/10 bg-[#0A0A0A] scroll-mt-20">
+        <section id="solutions" class="py-24 px-6 md:px-12 bg-[#F8FAFC] border-y border-gray-200 scroll-mt-20">
             <div class="max-w-7xl mx-auto">
                 
-                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6">
+                <div class="text-center mb-16">
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB] block mb-4">The Twin Engines</span>
+                    <h3 class="serif text-3xl md:text-4xl text-[#0B132B] font-medium mb-4">Scale Your Balance Sheet.</h3>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto text-lg">Apenzar mathematically eliminates your greatest operational vulnerabilities. Review the public prospectuses below to see how our decentralized network restructures your inbound costs and outbound liquidity.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <a href="coalition.html" class="card-clean p-8 md:p-12 flex flex-col h-full group block cursor-pointer border-t-4 border-t-[#2563EB]">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="bg-blue-50 text-[#2563EB] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded border border-blue-100">
+                                Sourcing & Procurement
+                            </span>
+                        </div>
+                        <h4 class="serif text-3xl md:text-4xl text-[#0B132B] mb-3">The Coalition</h4>
+                        <p class="text-gray-500 text-base leading-relaxed mb-8 flex-grow font-light">
+                            Stop overpaying the middlemen. We aggregate your purchasing power with thousands of other global businesses to bypass distributors and secure Fortune-500 wholesale pricing direct from the manufacturer. Lower your OPEX and earn yields on group savings.
+                        </p>
+                        <div class="mt-auto border-t border-gray-100 pt-6">
+                            <span class="text-[#2563EB] text-[11px] font-mono uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform inline-block">Review Coalition Prospectus &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="export.html" class="card-clean p-8 md:p-12 flex flex-col h-full group block cursor-pointer border-t-4 border-t-[#1D4ED8]">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="bg-indigo-50 text-[#1D4ED8] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded border border-indigo-100">
+                                Outbound Liquidation
+                            </span>
+                        </div>
+                        <h4 class="serif text-3xl md:text-4xl text-[#0B132B] mb-3">Macro-Export</h4>
+                        <p class="text-gray-500 text-base leading-relaxed mb-8 flex-grow font-light">
+                            Stop sitting on dead capital. We pool your unsold domestic inventory into massive corporate tranches and safely liquidate it into high-growth international markets, fully shielded by institutional escrow.
+                        </p>
+                        <div class="mt-auto border-t border-gray-100 pt-6">
+                            <span class="text-[#1D4ED8] text-[11px] font-mono uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform inline-block">Review Export Prospectus &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-200 pt-16 mb-12 flex flex-col md:flex-row justify-between items-end gap-4">
                     <div>
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-gray-500 block mb-4 flex items-center gap-2">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg> Walled Garden Intranet
-                        </span>
-                        <h3 class="serif text-3xl md:text-4xl text-white font-medium">The Network Protocols.</h3>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-gray-500 block mb-2">The Private Vaults</span>
+                        <h3 class="serif text-2xl md:text-3xl text-[#0B132B] font-medium">Advanced Asset Protocols.</h3>
                     </div>
-                    <a href="passport.html" class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#06B6D4] bg-[#06B6D4]/10 hover:bg-[#06B6D4] hover:text-[#0A0A0A] transition-colors border border-[#06B6D4]/30 px-6 py-3 rounded-sm shadow-sm cursor-pointer text-center">
-                        Acquire Terminal Passport →
-                    </a>
+                    <div class="text-[9px] font-mono font-bold uppercase tracking-widest text-gray-400 bg-gray-100 px-3 py-1 rounded-sm border border-gray-200">
+                        Authentication Required to Execute
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="spatial.html" class="vault-card p-8 flex flex-col h-full group block cursor-pointer hover:border-t-[#4338CA]">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-gray-500 text-[10px] font-mono font-bold uppercase tracking-widest">Real Estate</span>
+                        </div>
+                        <h4 class="serif text-xl text-[#0B132B] mb-3">Spatial Capital</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-6 flex-grow font-light">
+                            Reduce operational liability. We merge independent operators into powerful Master Leases to slash base rent and eliminate personal guarantees.
+                        </p>
+                        <div class="text-[9px] font-mono font-bold uppercase tracking-widest text-gray-400 border-t border-gray-200 pt-4 mt-auto group-hover:text-[#4338CA] transition-colors">
+                            Read Prospectus &rarr;
+                        </div>
+                    </a>
+
+                    <a href="exchange.html" class="vault-card p-8 flex flex-col h-full group block cursor-pointer hover:border-t-[#06B6D4]">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-gray-500 text-[10px] font-mono font-bold uppercase tracking-widest">Networking</span>
+                        </div>
+                        <h4 class="serif text-xl text-[#0B132B] mb-3">Allocation Exchange</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-6 flex-grow font-light">
+                            Turn your industry connections into capital. A strictly gated exchange where professionals bid their network capacity to distribute our deals.
+                        </p>
+                        <div class="text-[9px] font-mono font-bold uppercase tracking-widest text-gray-400 border-t border-gray-200 pt-4 mt-auto group-hover:text-[#06B6D4] transition-colors">
+                            Read Prospectus &rarr;
+                        </div>
+                    </a>
                     
-                    <a href="coalition.html" class="vault-card card-coalition p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-[#2563EB]/10 text-[#60A5FA] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#2563EB]/30">
-                                    Inbound Aggregation
-                                </span>
-                            </div>
-                            <h4 class="serif text-3xl text-white mb-3">The Coalition</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Buy-Side Volume Aggregation. We merge purchasing power to force Fortune-500 wholesale pricing. Initiate an order, lower your costs, and earn a massive cash dividend on the group's savings.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
+                    <a href="reserve.html" class="vault-card p-8 flex flex-col h-full group block cursor-pointer hover:border-t-[#C5A059]">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-gray-500 text-[10px] font-mono font-bold uppercase tracking-widest">Yield</span>
+                        </div>
+                        <h4 class="serif italic text-xl text-[#0B132B] mb-3">The Reserve</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-6 flex-grow font-light">
+                            UHNW asset deployment. We orchestrate the integration of institutional assets into your properties to generate massive dual-yield revenue.
+                        </p>
+                        <div class="text-[9px] font-mono font-bold uppercase tracking-widest text-gray-400 border-t border-gray-200 pt-4 mt-auto group-hover:text-[#C5A059] transition-colors">
+                            Read Prospectus &rarr;
                         </div>
                     </a>
-
-                    <a href="export.html" class="vault-card card-export p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-[#1D4ED8]/10 text-[#60A5FA] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#1D4ED8]/30">
-                                    Outbound Liquidation
-                                </span>
-                            </div>
-                            <h4 class="serif text-3xl text-white mb-3">Macro-Export</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Sell-Side Inventory Liquidation. We aggregate fragmented domestic inventory into massive institutional export blocks. Safely clear overseas trade with zero cross-border execution risk.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
+                    
+                    <a href="caribbean.html" class="vault-card p-8 flex flex-col h-full group block cursor-pointer hover:border-t-[#0B132B]">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-gray-500 text-[10px] font-mono font-bold uppercase tracking-widest">Commodities</span>
+                        </div>
+                        <h4 class="serif text-xl text-[#0B132B] mb-3">Caribbean Ops</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-6 flex-grow font-light">
+                            Buy-Side volume aggregation specifically built to consolidate fragmented supply chains for the regional hospitality sector.
+                        </p>
+                        <div class="text-[9px] font-mono font-bold uppercase tracking-widest text-gray-400 border-t border-gray-200 pt-4 mt-auto group-hover:text-[#0B132B] transition-colors">
+                            Read Prospectus &rarr;
                         </div>
                     </a>
-
-                    <a href="exchange.html" class="vault-card card-exchange p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-[#06B6D4]/10 text-[#06B6D4] text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm border border-[#06B6D4]/30">
-                                    Decentralized Capacity
-                                </span>
-                            </div>
-                            <h4 class="serif text-3xl text-white mb-3">Allocation Exchange</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                The Private Routing Floor. A strictly gated exchange where industry professionals bid their network capacity against a Performance Escrow to win massive, project-derived routing commissions.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="spatial.html" class="vault-card card-spatial p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-[#4338CA]/10 text-[#818CF8] border border-[#4338CA]/30 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
-                                    Real Estate Securitization
-                                </span>
-                            </div>
-                            <h4 class="serif text-3xl text-white mb-3">Spatial Capital</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Comprehensive footprint engineering. Master Leases to eliminate personal liability, coupled with algorithmic retail nodes to monetize dead commercial square footage.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="reserve.html" class="vault-card card-reserve p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-[#C5A059]/10 text-[#C5A059] border border-[#C5A059]/30 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
-                                    Experiential Yield
-                                </span>
-                            </div>
-                            <h4 class="serif italic text-3xl text-white mb-3">The Reserve</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                CapEx Securitization for ultra-luxury hospitality. We orchestrate the deployment of institutional assets (automotive, fine art, consumables) to generate massive dual-yield revenue.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="caribbean.html" class="vault-card card-caribbean p-8 md:p-10 flex flex-col h-full group block cursor-pointer">
-                        <div class="content-layer">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="bg-white/10 text-white border border-white/20 text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
-                                    Macro Commodities
-                                </span>
-                            </div>
-                            <h4 class="serif text-3xl text-white mb-3">Caribbean Ops</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Buy-Side volume aggregation for the premium regional hospitality sector. We consolidate fragmented supply chains into massive master-anchors to capture wholesale margin delta.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="locked-badge">Read Prospectus <span>→</span></div>
-                            </div>
-                        </div>
-                    </a>
-
                 </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-6 md:px-12 bg-white relative">
+            <div class="max-w-4xl mx-auto text-center border border-gray-200 rounded-2xl p-10 md:p-16 shadow-[0_20px_50px_-12px_rgba(37,99,235,0.1)] bg-gradient-to-b from-white to-blue-50/30">
+                <div class="absolute top-0 left-0 w-full h-2 bg-[#2563EB] rounded-t-2xl"></div>
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 border border-blue-200 mb-6 text-[#2563EB]">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h2 class="serif text-4xl md:text-5xl text-[#0B132B] mb-6">Enter the Private Market.</h2>
+                <p class="text-gray-500 text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                    Apenzar operates a strictly gated financial network. To commission a protocol blueprint, view the active order book, or leverage our institutional infrastructure, you must hold an active Quarterly Network Passport.
+                </p>
+                <div class="max-w-sm mx-auto">
+                    <a href="passport.html" class="btn-primary group">
+                        Acquire Passport <span class="group-hover:translate-x-1 transition-transform inline-block">&rarr;</span>
+                    </a>
+                </div>
+                <p class="mt-6 text-[10px] font-mono text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    Verification & NDA Required Upon Entry
+                </p>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-[#030303] border-t border-white/5 py-16 text-center px-6 mt-auto">
+    <footer class="bg-white border-t border-gray-200 py-16 text-center px-6 mt-auto">
         <div class="flex flex-col items-center">
-            <span class="font-black text-2xl tracking-[0.15em] uppercase text-white mb-6 block">APENZAR</span>
-            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-8 font-mono">
-                <span>Beverly Hills, CA</span><span class="hidden md:inline text-gray-800">|</span>
-                <span>Private Market Clearinghouse</span><span class="hidden md:inline text-gray-800">|</span>
+            <span class="font-black text-2xl tracking-[0.15em] uppercase text-[#0B132B] mb-6 block">APENZAR</span>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-8 font-mono">
+                <span>Beverly Hills, CA</span>
+                <span class="hidden md:inline text-gray-300">|</span>
+                <span>Private Market Clearinghouse</span>
+                <span class="hidden md:inline text-gray-300">|</span>
                 <span>Est. 2014</span>
             </div>
-            <p class="text-[9px] text-gray-600 uppercase tracking-[0.2em] font-semibold font-mono">
-                Institutional Financial Engineering © 2014-2026. All Rights Reserved.
+            <p class="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-semibold font-mono leading-relaxed max-w-2xl mx-auto">
+                Apenzar operates exclusively as a structural and algorithmic advisory matrix. Application of capital and execution of trade is subject to Network Governance and secured via third-party institutional escrow.<br><br>
+                &copy; 2014-2026 Apenzar. All Rights Reserved.
             </p>
         </div>
     </footer>

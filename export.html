@@ -5,18 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apenzar | Macro-Export</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>:root{--midnight:#0A1628;--cobalt:#1D4ED8;--slate-line:#F1F5F9;}body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:var(--midnight);antialiased;background-image:linear-gradient(var(--slate-line) 1px,transparent 1px),linear-gradient(90deg,var(--slate-line) 1px,transparent 1px);background-size:40px 40px;overflow-x:hidden;}.serif{font-family:'Playfair Display',serif;}.mono{font-family:'JetBrains Mono',monospace;}.card-clean{background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;transition:all 0.4s ease;}.card-clean:hover{transform:translateY(-4px);box-shadow:0 25px 50px -12px rgba(29,78,216,0.15);border-color:rgba(29,78,216,0.3);}.gradient-text{background:linear-gradient(135deg,var(--midnight) 0%,var(--cobalt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --midnight: #0A1628; --cobalt: #1D4ED8; --slate-line: #F1F5F9;}
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: var(--midnight); antialiased; overflow-x: hidden;
+            background-image: linear-gradient(var(--slate-line) 1px, transparent 1px), linear-gradient(90deg, var(--slate-line) 1px, transparent 1px); background-size: 40px 40px; }
+        .serif { font-family: 'Playfair Display', serif; } .mono { font-family: 'JetBrains Mono', monospace; }
+        .card-clean { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.4s ease; }
+        .card-clean:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(29,78,216,0.15); border-color: rgba(29,78,216,0.3); }
+        .premium-shadow { box-shadow: 0 20px 40px -10px rgba(10, 22, 40, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, var(--midnight) 0%, var(--cobalt) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
 </head>
 <body class="flex flex-col min-h-screen border-t-[8px] border-[#1D4ED8]">
 
-    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 shadow-sm">
-        <div class="flex items-center gap-4 cursor-pointer" onclick="window.location.href='index.html'">
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="window.history.back()">
             <span class="font-black text-xl tracking-[0.15em] uppercase text-[#0A1628]">APENZAR</span>
-            <span class="w-px h-5 bg-gray-300 hidden md:block"></span><span class="font-medium text-gray-500 tracking-widest uppercase text-sm hidden md:block">Macro-Export</span>
+            <span class="w-px h-5 bg-gray-200 hidden md:block"></span><span class="font-medium text-gray-500 tracking-widest uppercase text-sm hidden md:block">Macro-Export</span>
         </div>
-        <div class="text-[10px] uppercase tracking-[0.2em] text-red-500 font-bold bg-red-50 px-4 py-2 rounded-sm border border-red-200 flex items-center gap-2 font-mono">
-            <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span> Network Locked
+        <div class="text-[10px] uppercase tracking-[0.2em] text-[#1D4ED8] font-bold bg-blue-50 px-4 py-2 rounded border border-blue-100 flex items-center gap-2 font-mono shadow-sm">
+            Public Prospectus
         </div>
     </nav>
 
@@ -30,7 +39,7 @@
                 <span class="gradient-text italic">Securitize Global Export.</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-500 font-light leading-relaxed max-w-3xl mx-auto mb-12">
-                Millions of US businesses suffer from the "Independent Penalty"—locked out of lucrative international markets due to extreme logistical and regulatory friction. Apenzar aggregates your trapped inventory into massive corporate export blocks.
+                Millions of global SMEs suffer from the "Scale Penalty"—locked out of lucrative international markets due to extreme logistical and regulatory friction. Apenzar aggregates your trapped inventory into massive corporate export blocks.
             </p>
         </header>
 
@@ -38,34 +47,156 @@
             <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6 pr-0 md:pr-12">
                     <h2 class="serif text-4xl md:text-5xl text-[#0A1628] leading-tight font-medium">Unlock Dormant Yield.</h2>
-                    <p class="text-gray-500 leading-relaxed text-lg font-light">Domestic channels can plateau unpredictably. Your capital is trapped in unsold warehouses. High-velocity emerging international markets desperately need your inventory, but standalone cross-border trade is mathematically and legally prohibitive.</p>
+                    <p class="text-gray-500 leading-relaxed text-lg font-light">Domestic channels can plateau unpredictably. Your capital is trapped in unsold warehouses. High-velocity emerging international markets desperately need your inventory, but standalone cross-border trade is mathematically and legally prohibitive for an SME.</p>
+                    <p class="text-[#0A1628] font-medium leading-relaxed text-lg">Apenzar operates exclusively as your Structuring Advisor. We pool your supply with hundreds of other operators to fulfill massive international purchase orders. We handle the multi-modal logistics, the customs compliance, and the payment escrow. You just pack the box.</p>
                 </div>
                 <div class="card-clean p-10 md:p-14 relative overflow-hidden border-t-4 border-t-[#1D4ED8]">
                     <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-8 border-b border-gray-100 pb-4 font-mono">Structural Aggregation</div>
                     <div class="space-y-8">
                         <div>
-                            <div class="flex justify-between items-center mb-2 font-mono"><span class="text-xs font-bold uppercase tracking-widest text-[#0A1628]">Structured Proxy</span><span class="text-[10px] font-bold text-[#1D4ED8] bg-blue-50 px-3 py-1 border border-blue-200 uppercase tracking-widest rounded-sm">Liquid Asset</span></div>
-                            <p class="text-sm text-[#0A1628] leading-relaxed font-medium">Your inventory is pooled into a Master Container. The foreign buyer's capital is secured by specialized financial institutions before the freight ever leaves your dock.</p>
+                            <div class="flex justify-between items-center mb-2 font-mono">
+                                <span class="text-xs font-bold uppercase tracking-widest text-gray-600">The Legacy Trap</span>
+                                <span class="text-[10px] font-bold text-red-600 bg-red-50 px-3 py-1 border border-red-100 uppercase tracking-widest rounded-sm">Illiquid</span>
+                            </div>
+                            <p class="text-sm text-gray-500 leading-relaxed font-light">Your high-value assets are trapped by local stagnation. Attempting export alone exposes you to catastrophic shipping and payment fraud risks.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2 font-mono">
+                                <span class="text-xs font-bold uppercase tracking-widest text-[#0A1628]">Structured Proxy</span>
+                                <span class="text-[10px] font-bold text-[#1D4ED8] bg-blue-50 px-3 py-1 border border-blue-200 uppercase tracking-widest rounded-sm">Liquid Asset</span>
+                            </div>
+                            <p class="text-sm text-[#0A1628] leading-relaxed font-medium">Your inventory is pooled into an Apenzar Master Container. The foreign buyer's capital is secured by our institutional escrow partners before the freight ever leaves your dock.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 px-6 md:px-12 bg-[#0A1628] border-t border-[#1D4ED8]/30">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 mb-6 text-[#1D4ED8]">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        <section class="py-32 px-6 md:px-12 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1D4ED8] block mb-4 font-mono">Infrastructure Mechanics</span>
+                    <h2 class="serif text-4xl md:text-5xl text-[#0A1628] mb-6 font-medium">The Engine of Scale.</h2>
+                    <p class="text-gray-500 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                        The Apenzar Macro-Export Protocol is an end-to-end, highly scalable advisory chassis designed to isolate you from 100% of the cross-border risk.
+                    </p>
                 </div>
-                <h2 class="serif text-3xl md:text-4xl text-white mb-4">Network Authentication Required.</h2>
-                <p class="text-blue-200/60 font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                    Apenzar does not execute public transactions. To submit an inventory manifest, commission an Export Feasibility Blueprint, or access the active liquidation ledger, you must hold an active Quarterly Network Passport.
-                </p>
-                <a href="passport.html" class="inline-block bg-[#1D4ED8] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest font-mono rounded hover:bg-blue-800 transition-colors shadow-[0_0_30px_rgba(29,78,216,0.3)]">
-                    Acquire Network Passport →
-                </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card-clean p-10 flex flex-col group border-t-4 border-transparent hover:border-[#1D4ED8]">
+                        <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest font-mono">Pillar // 01</span>
+                            <span class="text-[#1D4ED8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></span>
+                        </div>
+                        <h3 class="serif text-2xl text-[#0A1628] mb-4">Volume Aggregation</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">Giant international buyers demand 10 to 50 shipping containers per order. We aggregate the inventory of thousands of SMEs into single, unified Master Tranches to meet this institutional demand.</p>
+                    </div>
+                    <div class="card-clean p-10 flex flex-col group border-t-4 border-transparent hover:border-[#1D4ED8]">
+                        <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest font-mono">Pillar // 02</span>
+                            <span class="text-[#1D4ED8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></span>
+                        </div>
+                        <h3 class="serif text-2xl text-[#0A1628] mb-4">Institutional Escrow Partners</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">Shipping overseas unmitigated is a massive risk. We leverage specialized, regulated third-party escrow providers to secure transactions. The buyer's capital is locked before the freight ever leaves your facility.</p>
+                    </div>
+                    <div class="card-clean p-10 flex flex-col group border-t-4 border-transparent hover:border-[#1D4ED8]">
+                        <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest font-mono">Pillar // 03</span>
+                            <span class="text-[#1D4ED8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></span>
+                        </div>
+                        <h3 class="serif text-2xl text-[#0A1628] mb-4">180-Day Liquidity Sprints</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">Instead of open-ended consignment, Apenzar underwrites your inventory for strict 6-month liquidation sprints, converting dormant physical assets back into liquid cash rapidly.</p>
+                    </div>
+                    <div class="card-clean p-10 flex flex-col group border-t-4 border-transparent hover:border-[#1D4ED8]">
+                        <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest font-mono">Pillar // 04</span>
+                            <span class="text-[#1D4ED8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
+                        </div>
+                        <h3 class="serif text-2xl text-[#0A1628] mb-4">Turnkey Logistics Advisory</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">Zero logistical headaches. We absorb 100% of the operational friction. We coordinate the container scheduling, the multi-modal freight transport, the drayage, and international customs.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <section class="py-32 px-6 md:px-12 bg-[#0A1628] border-y border-[#1D4ED8]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#1D4ED8] block mb-4 font-mono">Quantitative Alignment</span>
+                    <h2 class="serif text-4xl md:text-5xl text-white mb-6 font-medium">Predictive Archetype: Multi-Sector Export.</h2>
+                    <p class="text-gray-400 text-lg max-w-4xl mx-auto font-light leading-relaxed">
+                        An authorized economic pro forma detailing a scalable cross-border aggregation block. A demonstration of transforming massive illiquid domestic assets into immediate global capital.
+                    </p>
+                </div>
+                <div class="flex flex-col lg:flex-row premium-shadow rounded-xl overflow-hidden bg-[#0F1C2E] border border-white/10">
+                    <div class="lg:w-1/2 p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-white/10 relative">
+                        <div class="text-[10px] font-bold text-gray-500 tracking-[0.2em] uppercase mb-8 border-b border-white/10 pb-3 font-mono">Originator Portfolio Assessment</div>
+                        <h4 class="text-xl serif text-white mb-4">The Global SME</h4>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Operator possesses high-value durable goods. Domestic demand has stabilized, leaving massive institutional capital trapped in warehouse inventory.</p>
+                        <div class="space-y-5 mb-10 text-sm font-mono">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <span class="text-gray-500">Trapped Asset Volume</span>
+                                <span class="text-white font-semibold">22 TEUs (Twenty-Foot Equivalent Units)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <span class="text-gray-500">Domestic Liquidation Velocity</span>
+                                <span class="text-red-400 font-semibold">24 - 36 Months</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#050B14] p-6 rounded border border-white/5 text-center">
+                            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 font-mono">Illiquid Asset Valuation</div>
+                            <div class="text-4xl md:text-5xl font-mono text-white opacity-50 line-through decoration-red-500">$12,500,000</div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 p-10 md:p-14 bg-[#1D4ED8] text-white relative overflow-hidden flex flex-col justify-center">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full filter blur-[120px] opacity-10 pointer-events-none"></div>
+                        <div class="text-[10px] font-bold text-white tracking-[0.2em] uppercase mb-8 border-b border-white/30 pb-3 font-mono relative z-10">Apenzar Protocol Execution</div>
+                        <h4 class="text-xl serif text-white mb-4 relative z-10">The 180-Day Liquidity Sprint</h4>
+                        <div class="space-y-5 mb-10 text-sm font-light relative z-10 font-mono mt-6">
+                            <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <span class="text-blue-200">Third-Party Escrow Integration</span>
+                                <span class="font-bold text-white">100% Secured</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <span class="text-blue-200">Multi-Modal Logistics</span>
+                                <span class="font-bold text-emerald-300">100% Managed</span>
+                            </div>
+                        </div>
+                        <div class="bg-white text-[#0A1628] p-8 rounded text-center relative z-10 shadow-2xl mt-4">
+                            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 font-mono">Underwritten Liquidity Target</div>
+                            <div class="text-4xl md:text-5xl font-mono font-black text-[#1D4ED8] mb-3">$12,500,000</div>
+                            <div class="text-xs text-gray-600 leading-relaxed font-medium">
+                                The operator completely clears their warehouse and restores eight-figure cash liquidity in 6 months safely.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 bg-[#050505] border-t border-gray-800 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1D4ED8 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="max-w-4xl mx-auto relative z-10 border border-white/10 rounded-2xl p-10 md:p-16 bg-[#0A0A0A] shadow-2xl">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 mb-8 text-[#1D4ED8]">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h2 class="serif text-4xl md:text-5xl text-white mb-6">Network Authentication Required.</h2>
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                    Apenzar does not execute public transactions. To commission an export feasibility blueprint, view internal logistics data, or authorize a liquidity tranche, you must hold an active Quarterly Network Passport.
+                </p>
+                <div class="max-w-md mx-auto">
+                    <a href="passport.html" class="flex items-center justify-center w-full bg-[#1D4ED8] text-white px-8 py-5 text-sm font-bold uppercase tracking-widest font-mono rounded hover:bg-white hover:text-[#050505] transition-colors shadow-[0_0_30px_rgba(29,78,216,0.3)]">
+                        Acquire Network Passport &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="bg-[#050505] py-12 text-center px-6 mt-auto border-t border-white/5">
+        <span class="font-black text-xl tracking-[0.15em] uppercase text-white mb-4 block">APENZAR</span>
+        <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] font-semibold font-mono">&copy; 2014-2026. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>

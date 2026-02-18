@@ -6,31 +6,39 @@
     <title>Apenzar | The Coalition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>:root{--midnight:#0B132B;--trust-blue:#2563EB;--trust-dark:#1E3A8A;}body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:var(--midnight);antialiased;overflow-x:hidden;}.serif{font-family:'Playfair Display',serif;}.mono{font-family:'JetBrains Mono',monospace;}.card-clean{background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;transition:all 0.4s ease;}.card-clean:hover{transform:translateY(-4px);box-shadow:0 25px 50px -12px rgba(37,99,235,0.15);border-color:rgba(37,99,235,0.3);}.gradient-text{background:linear-gradient(135deg,var(--midnight) 0%,var(--trust-blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}</style>
+    <style>
+        :root { --midnight: #0B132B; --trust-blue: #2563EB; --slate-line: #F1F5F9;}
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: var(--midnight); antialiased; overflow-x: hidden;
+            background-image: linear-gradient(var(--slate-line) 1px, transparent 1px), linear-gradient(90deg, var(--slate-line) 1px, transparent 1px); background-size: 40px 40px; }
+        .serif { font-family: 'Playfair Display', serif; } .mono { font-family: 'JetBrains Mono', monospace; }
+        .card-clean { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.4s ease; }
+        .card-clean:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(37,99,235,0.15); border-color: rgba(37,99,235,0.3); }
+        .gradient-text { background: linear-gradient(135deg, var(--midnight) 0%, var(--trust-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
 </head>
 <body class="flex flex-col min-h-screen border-t-[8px] border-[#2563EB]">
 
     <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm">
-        <div class="flex items-center gap-4 cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="window.history.back()">
             <span class="font-black text-xl tracking-[0.15em] uppercase text-[#0B132B]">APENZAR</span>
             <span class="w-px h-5 bg-gray-200 hidden md:block"></span><span class="font-medium text-gray-500 tracking-widest uppercase text-sm hidden md:block">The Coalition</span>
         </div>
-        <div class="text-[10px] uppercase tracking-[0.2em] text-red-500 font-bold bg-red-50 px-4 py-2 rounded-sm border border-red-200 flex items-center gap-2 font-mono">
-            <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span> Network Locked
+        <div class="text-[10px] uppercase tracking-[0.2em] text-[#2563EB] font-bold bg-[#EFF6FF] px-4 py-2 rounded border border-[#DBEAFE] flex items-center gap-2 font-mono shadow-sm">
+            Public Prospectus
         </div>
     </nav>
 
     <main class="w-full flex-grow">
         <header class="py-24 md:py-32 px-6 md:px-12 max-w-6xl mx-auto text-center relative z-10">
-            <div class="inline-block mb-8 px-5 py-2 border border-blue-100 bg-blue-50 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 rounded-sm font-mono">
-                End the Independent Penalty
+            <div class="inline-block mb-8 px-5 py-2 border border-blue-100 bg-blue-50 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB] rounded-sm font-mono">
+                Decentralized Volume Aggregation
             </div>
             <h1 class="serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] mb-8 font-medium text-[#0B132B] tracking-tight">
                 Buy Like a Giant.<br>
                 <span class="gradient-text italic">Profit Like a Founder.</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-500 font-light leading-relaxed max-w-3xl mx-auto mb-12">
-                Small business owners are crushed under the weight of inventory costs because they buy alone. <strong>The Coalition</strong> merges your purchasing power with thousands of others, forcing suppliers to grant you Fortune 500 wholesale pricing. 
+                Global SMEs and independent entrepreneurs are crushed under the weight of inventory costs because they buy alone. <strong>The Coalition</strong> merges your purchasing power with thousands of others globally, forcing suppliers to grant you Fortune-500 wholesale pricing.
             </p>
         </header>
 
@@ -38,39 +46,83 @@
             <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6 pr-0 md:pr-12">
                     <h2 class="serif text-4xl md:text-5xl text-[#0B132B] leading-tight font-medium">Stop funding the middlemen.</h2>
-                    <p class="text-gray-500 leading-relaxed text-lg font-light">When you buy inventory alone, you possess zero negotiating leverage. You absorb massive distributor markups simply because you lack corporate scale. The Coalition completely inverts the supply chain. By initiating a group purchase through our algorithmic network, you command absolute factory-floor pricing.</p>
+                    <p class="text-gray-500 leading-relaxed text-lg font-light">When you buy inventory alone, you possess zero negotiating leverage. You absorb massive distributor markups simply because you lack corporate scale. The system is designed to penalize independence.</p>
+                    <p class="text-[#0B132B] font-medium leading-relaxed text-lg">The Coalition completely inverts the supply chain. By initiating a group purchase through our algorithmic network, you command absolute factory-floor pricing, and you earn a cash yield on the group's total savings.</p>
                 </div>
-                <div class="card-clean p-10 md:p-14 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-[#2563EB]"></div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-8 border-b border-gray-100 pb-4 font-mono">The Procurement Shift</div>
+                <div class="card-clean p-10 md:p-14 relative overflow-hidden shadow-sm border-t-4 border-t-[#2563EB]">
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-8 border-b border-gray-100 pb-4 font-mono">The Algorithmic Shift</div>
                     <div class="space-y-8">
                         <div>
                             <div class="flex justify-between items-center mb-2 font-mono"><span class="text-xs font-bold uppercase tracking-widest text-gray-600">Buying Alone</span><span class="text-[10px] font-bold text-red-600 bg-red-50 px-3 py-1 rounded-sm border border-red-100 uppercase tracking-widest">Sunk Cost</span></div>
-                            <p class="text-sm text-gray-500 leading-relaxed font-light">You purchase independently. You pay maximum retail pricing. Your cash leaves your business forever.</p>
+                            <div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden mb-3"><div class="h-full bg-red-500 w-[15%]"></div></div>
+                            <p class="text-sm text-gray-500 font-light">You purchase independently. You pay maximum retail pricing. Your cash leaves your business forever.</p>
                         </div>
                         <div>
                             <div class="flex justify-between items-center mb-2 font-mono"><span class="text-xs font-bold uppercase tracking-widest text-[#0B132B]">The Coalition</span><span class="text-[10px] font-bold text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-sm border border-[#DBEAFE] uppercase tracking-widest">Profit Center</span></div>
-                            <p class="text-sm text-[#0B132B] leading-relaxed font-medium">You initiate a massive volume pool. You secure factory-floor pricing. You earn a massive cash commission on the total group's savings.</p>
+                            <div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden mb-3"><div class="h-full bg-[#2563EB] w-[100%]"></div></div>
+                            <p class="text-sm text-[#0B132B] font-medium">You secure factory pricing and earn a massive cash commission on the combined group's savings.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 px-6 md:px-12 bg-[#050505] border-t border-gray-800">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/30 mb-6 text-[#2563EB]">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        <section class="py-32 px-6 md:px-12 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB] block mb-4 font-mono">Ecosystem Architecture</span>
+                    <h2 class="serif text-4xl md:text-5xl text-[#0B132B] mb-6 font-medium">Three Ways to Profit.</h2>
+                    <p class="text-gray-500 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                        Apenzar provides the algorithmic governance and the financial models. The economic engine is fueled entirely by our members acting in three highly-incentivized roles.
+                    </p>
                 </div>
-                <h2 class="serif text-3xl md:text-4xl text-white mb-4">Network Authentication Required.</h2>
-                <p class="text-gray-400 font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                    Apenzar does not execute public transactions. To originate a procurement tranche, enter the active order book, or capture yield on this protocol, you must hold an active Quarterly Network Passport.
-                </p>
-                <a href="passport.html" class="inline-block bg-[#2563EB] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest font-mono rounded hover:bg-blue-700 transition-colors shadow-[0_0_30px_rgba(37,99,235,0.3)]">
-                    Acquire Network Passport →
-                </a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card-clean p-10 flex flex-col border-t-4 border-t-[#2563EB]">
+                        <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-3 font-mono">Role // 01</div>
+                        <h3 class="serif text-3xl text-[#0B132B] mb-4">The Lead</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">You need a specific commodity. You initiate the purchase pool. Because you sparked the aggregation, you earn a percentage yield on the <strong>entire pool's total savings</strong>.</p>
+                        <div class="bg-[#EFF6FF] text-[#2563EB] text-[10px] font-bold uppercase tracking-widest px-4 py-3 rounded-lg text-center border border-[#DBEAFE] font-mono">Benefit: Massive Cash Yield</div>
+                    </div>
+                    <div class="card-clean p-10 flex flex-col border-t-4 border-t-[#0B132B]">
+                        <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-3 font-mono">Role // 02</div>
+                        <h3 class="serif text-3xl text-[#0B132B] mb-4">The Anchor</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">You are a large operator who pledges massive volume to an active pool, instantly triggering the manufacturer's deepest discount tier.</p>
+                        <div class="bg-gray-50 text-[#0B132B] text-[10px] font-bold uppercase tracking-widest px-4 py-3 rounded-lg text-center border border-gray-200 font-mono">Benefit: Fixed Dividend</div>
+                    </div>
+                    <div class="card-clean p-10 flex flex-col border-t-4 border-t-gray-400">
+                        <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-3 font-mono">Role // 03</div>
+                        <h3 class="serif text-3xl text-[#0B132B] mb-4">The Participant</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">Independent businesses who simply join an active pool. You contribute your normal operational volume, lowering the price for everyone.</p>
+                        <div class="bg-white text-gray-600 text-[10px] font-bold uppercase tracking-widest px-4 py-3 rounded-lg text-center border border-gray-200 shadow-sm font-mono">Benefit: Wholesale Floor Price</div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <section class="py-24 px-6 md:px-12 bg-[#050505] border-t border-gray-800 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#2563EB 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="max-w-4xl mx-auto relative z-10 border border-white/10 rounded-2xl p-10 md:p-16 bg-[#0A0A0A] shadow-2xl">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/30 mb-8 text-[#2563EB]">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h2 class="serif text-4xl md:text-5xl text-white mb-6">Network Authentication Required.</h2>
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                    Apenzar does not execute public transactions. To initiate a procurement tranche, enter the active order book, or capture yield on this protocol, you must hold an active Quarterly Network Passport.
+                </p>
+                <div class="max-w-md mx-auto">
+                    <a href="passport.html" class="flex items-center justify-center w-full bg-[#2563EB] text-white px-8 py-5 text-sm font-bold uppercase tracking-widest font-mono rounded hover:bg-white hover:text-[#050505] transition-colors shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+                        Acquire Network Passport &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="bg-[#050505] py-12 text-center px-6 mt-auto border-t border-white/5">
+        <span class="font-black text-xl tracking-[0.15em] uppercase text-white mb-4 block">APENZAR</span>
+        <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] font-semibold font-mono">&copy; 2014-2026. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
